@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Homologación de Neumáticos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Encabezado Corporativo en Fondo Blanco con Logos PNG -->
+        <header class="app-header-corporate">
+        <div class="header-brand">
+            <!-- Logo 1: Merquellantas -->
+            <div class="logo-box">
+            <img src="logo-merquellantas.png" alt="Merquellantas" class="brand-logo">
+            </div>
+            
+            <!-- Logo 2: MerquePro -->
+            <div class="logo-box">
+            <img src="logo-merquepro.png" alt="MerquePro" class="brand-logo">
+            </div>
+
+            <div class="header-titles">
+            <h1>Calculadora de Homologación de Llantas</h1>
+            <p>Evalúa la compatibilidad técnica según el estándar de variación ±3.0% en diámetro total</p>
+            </div>
+        </div>
+
+        <div class="header-badge">
+            <span>NORMATIVA TÉCNICA</span>
+            <strong>VARIACIÓN ±3.0%</strong>
+        </div>
+        </header>
+
+    <!-- Banner de Estado del Criterio -->
+    <section id="status-card" class="status-banner valid">
+      <div class="status-left">
+        <span id="status-icon" class="status-icon">✓</span>
+        <div>
+          <h2 id="status-title">EVALUANDO HOMOLOGACIÓN...</h2>
+          <p id="status-subtitle">Variación dentro del rango técnico permitido</p>
+        </div>
+      </div>
+      <div class="status-right">
+        <span class="status-label">DIFERENCIA DE DIÁMETRO</span>
+        <span id="kpi-diameter-diff" class="status-value">+0.00%</span>
+      </div>
+    </section>
+
+    <!-- Layout Grid Principal -->
+    <div class="main-grid">
+      
+      <!-- Columna Izquierda: Configuración -->
+      <div class="left-column">
+        <section class="card">
+          <h3>1. Configuración de Neumáticos</h3>
+          
+          <!-- Neumático Original -->
+          <div class="tire-box original-border">
+            <div class="tire-box-header">
+              <span class="badge badge-dark">Original / Fábrica</span>
+            </div>
+            <div class="form-group">
+              <label for="select-orig">Medida Comercial (Colombia):</label>
+              <select id="select-orig" class="tire-select"></select>
+            </div>
+            <div class="manual-inputs">
+              <div class="form-group">
+                <label for="width-orig">Ancho (mm)</label>
+                <input type="number" id="width-orig" value="205" step="0.1">
+              </div>
+              <div class="form-group">
+                <label for="aspect-orig">Perfil (%)</label>
+                <input type="number" id="aspect-orig" value="75">
+              </div>
+              <div class="form-group">
+                <label for="rim-orig">Rin (pulgadas)</label>
+                <input type="number" id="rim-orig" value="17.5" step="0.5">
+              </div>
+            </div>
+          </div>
+
+          <!-- Neumático Nuevo -->
+          <div class="tire-box new-border">
+            <div class="tire-box-header">
+              <span class="badge badge-gold">Nuevo / Propuesto</span>
+            </div>
+            <div class="form-group">
+              <label for="select-new">Medida Comercial (Colombia):</label>
+              <select id="select-new" class="tire-select"></select>
+            </div>
+            <div class="manual-inputs">
+              <div class="form-group">
+                <label for="width-new">Ancho (mm)</label>
+                <input type="number" id="width-new" value="215" step="0.1">
+              </div>
+              <div class="form-group">
+                <label for="aspect-new">Perfil (%)</label>
+                <input type="number" id="aspect-new" value="75">
+              </div>
+              <div class="form-group">
+                <label for="rim-new">Rin (pulgadas)</label>
+                <input type="number" id="rim-new" value="17.5" step="0.5">
+              </div>
+            </div>
+          </div>
+
+          <!-- Velocidad Tablero -->
+          <div class="form-group speed-group">
+            <label for="speed-input">Velocidad Marcada en Tablero (km/h):</label>
+            <input type="number" id="speed-input" value="80" class="speed-input">
+          </div>
+        </section>
+
+        <!-- Criterios Técnicos -->
+        <section class="card norm-card">
+          <h3>📜 Criterios y Normativa Técnica</h3>
+          <p><strong>1. Criterio General de Homologación:</strong></p>
+          <p class="text-sm">Se considera técnicamente homologado si la variación del diámetro total no excede el <strong>±3.0%</strong>. Para medidas en pulgadas (ej. 11R22.5), se aplica un perfil estándar del 80%.</p>
+          <p><strong>2. Índice de Carga y Velocidad :</strong></p>
+          <p class="text-sm">El neumático nuevo debe ser siempre igual o superior en capacidad de carga y código de velocidad con respecto a la especificación original del fabricante</p>
+          <p><strong>3. Verificación de Espacio de Rueda :</strong></p>
+          <p class="text-sm">Asegúrese de que el ancho adicional o diámetro no roce con los amortiguadores, guardabarros o elementos de suspensión en máxima dirección o compresión.</p>
+        </section>
+      </div>
+
+      <!-- Columna Derecha: Métricas y Resultados -->
+      <div class="right-column">
+        
+        <!-- Tarjetas KPI Alineadas (4 Columnas Exactas) -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span class="kpi-title">Diámetro Original</span>
+            <span id="card-d-orig" class="kpi-metric">752.0 mm</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-title">Diámetro Nuevo</span>
+            <span id="card-d-new" class="kpi-metric">767.0 mm</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-title">Velocidad Real</span>
+            <span id="card-speed-real" class="kpi-metric speed-metric">81.6 km/h</span>
+            <span id="card-speed-diff" class="kpi-submetric">+1.6 km/h</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-title">Diferencia de Ancho</span>
+            <span id="card-w-diff" class="kpi-metric">+10 mm</span>
+          </div>
+        </div>
+
+        <!-- Visualizador SVG Escalado -->
+        <section class="card">
+          <h3>Visualizador Gráfico Escalado</h3>
+          <div class="svg-container">
+            <svg id="tire-visualizer" viewBox="0 0 500 240" width="100%" height="240"></svg>
+          </div>
+          <div class="svg-legend">
+            <span><span class="legend-dot orig-dot"></span> Original</span>
+            <span><span class="legend-dot new-dot"></span> Nuevo</span>
+          </div>
+        </section>
+
+        <!-- Tabla Comparativa Completa -->
+        <section class="card">
+          <h3>Tabla Comparativa Completa</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Parámetro Técnico</th>
+                <th>Original</th>
+                <th>Nuevo</th>
+                <th>Variación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Altura del Flanco (H)</td>
+                <td id="orig-flank">-</td>
+                <td id="new-flank">-</td>
+                <td id="var-flank" class="fw-bold">-</td>
+              </tr>
+              <tr>
+                <td>Diámetro Total (D)</td>
+                <td id="orig-diam">-</td>
+                <td id="new-diam">-</td>
+                <td id="var-diam" class="fw-bold">-</td>
+              </tr>
+              <tr>
+                <td>Circunferencia Total (C)</td>
+                <td id="orig-circ">-</td>
+                <td id="new-circ">-</td>
+                <td id="var-circ" class="fw-bold">-</td>
+              </tr>
+              <tr>
+                <td>Revoluciones por Km</td>
+                <td id="orig-revs">-</td>
+                <td id="new-revs">-</td>
+                <td id="var-revs" class="fw-bold">-</td>
+              </tr>
+              <tr>
+                <td>Velocidad Real (a <span id="tbl-speed-ind">80</span> km/h)</td>
+                <td id="real-speed" colspan="2" class="text-center fw-bold">-</td>
+                <td id="var-speed" class="fw-bold">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
