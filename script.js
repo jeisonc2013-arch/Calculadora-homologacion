@@ -23,7 +23,7 @@ const colombianTireSizes = [
   { label: "31x10.50R15 (4x4 Comercial)", w: 10.5, a: 80, r: 15 },
 
   // --- TRANSPORTE PESADO, CAMIONES Y BUSES ---
-  { label: "205/75R17.5 (Camión Liviano Comercial)", w: 215, a: 75, r: 17.5 },
+  { label: "205/75R17.5 (Camión Liviano Comercial)", w: 205, a: 75, r: 17.5 },
   { label: "215/75R17.5 (Turbo, NPR, NHR)", w: 215, a: 75, r: 17.5 },
   { label: "235/75R17.5 (Buses urbanos, NQR)", w: 235, a: 75, r: 17.5 },
   { label: "9.5R17.5 (Camión Liviano Comercial)", w: 9.5, a: 80, r: 17.5 },
